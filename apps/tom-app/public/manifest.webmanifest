@@ -1,0 +1,9 @@
+{
+  "name": "Tom — your co-pilot",
+  "short_name": "Tom",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": []
+}

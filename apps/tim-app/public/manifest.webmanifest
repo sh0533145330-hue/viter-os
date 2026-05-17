@@ -1,0 +1,9 @@
+{
+  "name": "Tim — your team co-pilot",
+  "short_name": "Tim",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1410",
+  "theme_color": "#0a1410",
+  "icons": []
+}

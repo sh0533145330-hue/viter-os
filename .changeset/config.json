@@ -1,0 +1,22 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "vita-os/vita-os" }],
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": [
+    "@vita/app-operator",
+    "@vita/app-tom",
+    "@vita/app-tim",
+    "@vita/app-tom-mcp",
+    "@vita/app-tim-mcp",
+    "@vita/app-worker-extractor",
+    "@vita/app-worker-ontology",
+    "@vita/app-worker-engine",
+    "@vita/app-worker-notifier",
+    "@vita/app-worker-tuner"
+  ]
+}

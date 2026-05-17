@@ -1,0 +1,8 @@
+{
+  "name": "@vita/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "index.cjs",
+  "files": ["index.cjs"]
+}

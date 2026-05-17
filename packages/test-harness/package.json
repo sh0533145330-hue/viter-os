@@ -1,0 +1,44 @@
+{
+  "name": "@vita/test-harness",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "UNLICENSED",
+  "description": "Shared test fixtures, fuzz harnesses, and substrate invariants (EP-19).",
+  "private": true,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./fixtures": {
+      "types": "./src/fixtures/index.ts",
+      "import": "./src/fixtures/index.ts"
+    },
+    "./fuzz": {
+      "types": "./src/fuzz/index.ts",
+      "import": "./src/fuzz/index.ts"
+    },
+    "./invariants": {
+      "types": "./src/invariants/index.ts",
+      "import": "./src/invariants/index.ts"
+    }
+  },
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo",
+    "lint": "biome check .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@vita/integrations",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Real integrations: Supabase admin, OpenRouter LLM, and token-based source connectors.",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": { "types": "./src/index.ts", "import": "./src/index.ts" },
+    "./supabase": { "types": "./src/supabase.ts", "import": "./src/supabase.ts" },
+    "./openrouter": { "types": "./src/openrouter.ts", "import": "./src/openrouter.ts" },
+    "./nango": { "types": "./src/nango.ts", "import": "./src/nango.ts" },
+    "./connectors": { "types": "./src/connectors/index.ts", "import": "./src/connectors/index.ts" }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "lint": "biome check .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.46.1",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@vita/observability",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "UNLICENSED",
+  "description": "Structured logging (Pino) and OpenTelemetry bootstrap for VitaOS apps and workers.",
+  "private": true,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": { "types": "./src/index.ts", "import": "./src/index.ts" },
+    "./logger": { "types": "./src/logger.ts", "import": "./src/logger.ts" },
+    "./otel": { "types": "./src/otel.ts", "import": "./src/otel.ts" },
+    "./pii-redaction": { "types": "./src/pii-redaction.ts", "import": "./src/pii-redaction.ts" },
+    "./trace": { "types": "./src/trace.ts", "import": "./src/trace.ts" },
+    "./metrics": { "types": "./src/metrics.ts", "import": "./src/metrics.ts" },
+    "./alerts": { "types": "./src/alerts.ts", "import": "./src/alerts.ts" },
+    "./alert-destinations": { "types": "./src/alert-destinations.ts", "import": "./src/alert-destinations.ts" },
+    "./audit-log": { "types": "./src/audit-log.ts", "import": "./src/audit-log.ts" },
+    "./runbooks": { "types": "./src/runbooks.ts", "import": "./src/runbooks.ts" },
+    "./slo": { "types": "./src/slo.ts", "import": "./src/slo.ts" },
+    "./sentry": { "types": "./src/sentry.ts", "import": "./src/sentry.ts" },
+    "./types": { "types": "./src/types.ts", "import": "./src/types.ts" }
+  },
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo",
+    "lint": "biome check .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vita/anonymization": "workspace:*",
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.52.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.55.0",
+    "@opentelemetry/resources": "^1.28.0",
+    "@opentelemetry/sdk-node": "^0.55.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    { "path": "./packages/core" },
+    { "path": "./packages/agents" },
+    { "path": "./packages/agents-builtin" },
+    { "path": "./packages/blocks-builtin" },
+    { "path": "./packages/pack-sdk" },
+    { "path": "./packages/packs-seed" },
+    { "path": "./packages/connector-sdk" },
+    { "path": "./packages/connectors-builtin" },
+    { "path": "./packages/ui" },
+    { "path": "./packages/auth" },
+    { "path": "./packages/policy" },
+    { "path": "./packages/anonymization" },
+    { "path": "./packages/branding" },
+    { "path": "./packages/billing" },
+    { "path": "./packages/voice" },
+    { "path": "./packages/timeseries" },
+    { "path": "./packages/eval" },
+    { "path": "./packages/db" },
+    { "path": "./packages/observability" },
+    { "path": "./packages/config" },
+    { "path": "./packages/key-custody" },
+    { "path": "./packages/security" },
+    { "path": "./packages/test-harness" },
+    { "path": "./packages/approvals" }
+  ]
+}

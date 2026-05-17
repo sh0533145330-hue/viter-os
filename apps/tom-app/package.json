@@ -1,0 +1,39 @@
+{
+  "name": "@vita/app-tom",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Tom personal PWA (Next.js 14).",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@vita/config": "workspace:*",
+    "@vita/observability": "workspace:*",
+    "@vita/ui": "workspace:*",
+    "@vita/integrations": "workspace:*",
+    "@vita/agents": "workspace:*",
+    "@vita/search": "workspace:*",
+    "server-only": "^0.0.1",
+    "@supabase/supabase-js": "^2.47.2",
+    "next": "^14.2.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}

@@ -1,0 +1,13 @@
+// apps/tim-app/vitest.config.ts
+import { defineConfig } from "file:///C:/Users/levin/vita-os/repo/node_modules/.pnpm/vitest@2.1.9_@types+node@20.19.41/node_modules/vitest/dist/config.js";
+var vitest_config_default = defineConfig({
+  test: {
+    name: "@vita/app-tim",
+    environment: "jsdom",
+    include: ["**/*.{test,spec}.{ts,tsx}"]
+  }
+});
+export {
+  vitest_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiYXBwcy90aW0tYXBwL3ZpdGVzdC5jb25maWcudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJDOlxcXFxVc2Vyc1xcXFxsZXZpblxcXFx2aXRhLW9zXFxcXHJlcG9cXFxcYXBwc1xcXFx0aW0tYXBwXCI7Y29uc3QgX192aXRlX2luamVjdGVkX29yaWdpbmFsX2ZpbGVuYW1lID0gXCJDOlxcXFxVc2Vyc1xcXFxsZXZpblxcXFx2aXRhLW9zXFxcXHJlcG9cXFxcYXBwc1xcXFx0aW0tYXBwXFxcXHZpdGVzdC5jb25maWcudHNcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfaW1wb3J0X21ldGFfdXJsID0gXCJmaWxlOi8vL0M6L1VzZXJzL2xldmluL3ZpdGEtb3MvcmVwby9hcHBzL3RpbS1hcHAvdml0ZXN0LmNvbmZpZy50c1wiO1x1RkVGRmltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gJ3ZpdGVzdC9jb25maWcnO1xuXG5leHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoe1xuICB0ZXN0OiB7XG4gICAgbmFtZTogJ0B2aXRhL2FwcC10aW0nLFxuICAgIGVudmlyb25tZW50OiAnanNkb20nLFxuICAgIGluY2x1ZGU6IFsnKiovKi57dGVzdCxzcGVjfS57dHMsdHN4fSddLFxuICB9LFxufSk7Il0sCiAgIm1hcHBpbmdzIjogIjtBQUE2VCxTQUFTLG9CQUFvQjtBQUUxVixJQUFPLHdCQUFRLGFBQWE7QUFBQSxFQUMxQixNQUFNO0FBQUEsSUFDSixNQUFNO0FBQUEsSUFDTixhQUFhO0FBQUEsSUFDYixTQUFTLENBQUMsMkJBQTJCO0FBQUEsRUFDdkM7QUFDRixDQUFDOyIsCiAgIm5hbWVzIjogW10KfQo=

@@ -1,0 +1,75 @@
+// k6 load test template for VitaOS substrate.
+// Render this template with concrete env vars before running:
+//   k6 run --env BASE_URL=https://staging.api.example.com --env TOKEN=... script.js
+//
+// Scenarios:
+//   - extraction: simulates L0 -> L1 extraction throughput
+//   - query:      simulates L4 cross-source query latency
+//
+// Thresholds enforce 01-v1-master-spec.md §31.4 SLOs:
+//   p99 API < 2s, p99 agent < 30s, p99 search < 5s, error rate < 0.1%.
+
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  scenarios: {
+    extraction: {
+      executor: 'ramping-vus',
+      startVUs: 0,
+      stages: [
+        { duration: '30s', target: 20 },
+        { duration: '2m', target: 100 },
+        { duration: '30s', target: 0 },
+      ],
+      exec: 'extraction',
+    },
+    query: {
+      executor: 'constant-arrival-rate',
+      rate: 200,
+      timeUnit: '1s',
+      duration: '2m',
+      preAllocatedVUs: 50,
+      maxVUs: 200,
+      exec: 'query',
+    },
+  },
+  thresholds: {
+    'http_req_duration{scenario:extraction}': ['p(99)<30000'],
+    'http_req_duration{scenario:query}': ['p(99)<5000'],
+    'http_req_failed': ['rate<0.001'],
+  },
+};
+
+const BASE_URL = __ENV.BASE_URL || 'http://localhost:3000';
+const TOKEN = __ENV.TOKEN || '';
+
+function authHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${TOKEN}`,
+  };
+}
+
+export function extraction() {
+  const payload = JSON.stringify({
+    sourceId: `source-${__VU}`,
+    documentId: `doc-${__ITER}`,
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  });
+  const res = http.post(`${BASE_URL}/api/v1/extract`, payload, {
+    headers: authHeaders(),
+    tags: { scenario: 'extraction' },
+  });
+  check(res, { 'extraction 2xx': (r) => r.status >= 200 && r.status < 300 });
+  sleep(0.1);
+}
+
+export function query() {
+  const url = `${BASE_URL}/api/v1/query?q=at-risk&limit=20`;
+  const res = http.get(url, {
+    headers: authHeaders(),
+    tags: { scenario: 'query' },
+  });
+  check(res, { 'query 2xx': (r) => r.status >= 200 && r.status < 300 });
+}

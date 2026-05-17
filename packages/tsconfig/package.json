@@ -1,0 +1,7 @@
+{
+  "name": "@vita/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "files": ["base.json", "nextjs.json", "library.json"]
+}
